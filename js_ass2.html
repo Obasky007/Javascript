@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #222;
+    }
+
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-block {
+      background: rgb(217, 207, 207);
+      padding: 12px;
+      margin: 10px 0;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #bbb;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    ul {
+      margin: 8px 0 15px 20px;
+    }
+
+    .nav {
+      background-color: black;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      margin: auto;
+      gap: 20px;
+      position: sticky;
+      top: 15px;
+    }
+
+    ol {
+      list-style-type: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    a {
+      color: bisque;
+     text-decoration: none;
+    }
+
+    a:hover{
+      background-color: rgba(128, 128, 128, 0.517);
+      padding: 6px;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <h1 style="color: bisque;">
+      JavaScript
+    </h1>
+    <div class="links">
+      <ol>
+        <li><a href="index.html">Day 1</a></li>
+        <li><a href="js_ass2.html">Day 2</a></li>
+      </ol>
+    </div>
+  </nav>
+  <h1>JavaScript</h1>
+  <!-- <div class="section">
+    <h2>5 Ways to Display JavaScript Output</h2>
+    <ol>
+      <li>Using <b>console.log()</b></li>
+      <li>Using <b>alert()</b></li>
+      <li>Using <b>document.write()</b></li>
+      <li>Using <b>innerHTML</b></li>
+      <li>Using <b>DOM manipulation</b></li>
+    </ol>
+
+    <h3>Examples:</h3>
+    <div class="code-block">
+      console.log("Hello Console");<br>
+      alert("Hello Alert");<br>
+      document.write("Hello Document");<br>
+      document.getElementById("demo").innerHTML = "Hello innerHTML";<br>
+      document.querySelector("#demo").textContent = "Hello DOM";
+    </div>
+  </div> -->
+  <div class="section">
+    <h2>let vs var vs const</h2>
+    <p>JavaScript has three main ways to declare variables:
+      <b>var</b>, <b>let</b>, and <b>const</b>.
+      They are similar in that all are used to store values, but they differ in <b>scope</b>, <b>re-declaration</b>,
+      <b>re-assignment</b>, and <b>hoisting</b>.
+    </p>
+
+    <h3>Key Differences</h3>
+    <ul>
+      <li><b>var</b> → Function-scoped, can be re-declared & re-assigned, hoisted with <i>undefined</i>.</li>
+      <li><b>let</b> → Block-scoped, cannot be re-declared, can be re-assigned, hoisted but not initialized (TDZ).</li>
+      <li><b>const</b> → Block-scoped, cannot be re-declared or re-assigned, must be initialized, also has TDZ.</li>
+    </ul>
+
+    <h3>Similarities</h3>
+    <ul>
+      <li>All three are used to declare variables.</li>
+      <li><b>let</b> and <b>const</b> were introduced in ES6 (modern JavaScript).</li>
+      <li><b>let</b> and <b>const</b> both provide block scope and avoid common <b>var</b> pitfalls.</li>
+    </ul>
+
+    <h3>1. Scope</h3>
+    <div class="code-block">
+      if (true) {<br>
+      var a = 1; // function scope<br>
+      let b = 2; // block scope<br>
+      const c = 3; // block scope<br>
+      }<br>
+      console.log(a); // <i class="fa-solid fa-check" style="color:green;"></i> works<br>
+      console.log(b); // <i class="fa-solid fa-xmark" style="color:red;"></i> error<br>
+      console.log(c); // <i class="fa-solid fa-xmark" style="color:red;"></i> error
+    </div>
+
+    <h3>2. Redeclaration & Reassignment</h3>
+    <div class="code-block">
+      var x = 1; var x = 2; // <i class="fa-solid fa-check" style="color:green;"></i> allowed<br>
+      let y = 3; // let y = 4; <i class="fa-solid fa-xmark" style="color:red;"></i> not allowed<br>
+      y = 5; // <i class="fa-solid fa-check" style="color:green;"></i> reassignment allowed<br>
+      const z = 6; // const z = 7 <i class="fa-solid fa-xmark" style="color:red;"></i> no redeclare<br>
+      z = 8; // <i class="fa-solid fa-xmark" style="color:red;"></i> no reassignment
+    </div>
+
+    <h3>3. Hoisting</h3>
+    <div class="code-block">
+      console.log(a); // undefined (<i class="fa-solid fa-check" style="color:green;"></i> var hoisted)<br>
+      var a = 10;<br><br>
+
+      console.log(b); // <i class="fa-solid fa-xmark" style="color:red;"></i> ReferenceError<br>
+      let b = 20;<br><br>
+
+      console.log(c); // <i class="fa-solid fa-xmark" style="color:red;"></i> ReferenceError<br>
+      const c = 30;
+    </div>
+
+    <h3>Quick Comparison</h3>
+    <table>
+      <tr>
+        <th></th>
+        <th>var</th>
+        <th>let</th>
+        <th>const</th>
+      </tr>
+      <tr>
+        <td>Scope</td>
+        <td>Function</td>
+        <td>Block</td>
+        <td>Block</td>
+      </tr>
+      <tr>
+        <td>Redeclare</td>
+        <td><i class="fa-solid fa-check" style="color:green;"></i></td>
+        <td><i class="fa-solid fa-xmark" style="color:red;"></i></td>
+        <td><i class="fa-solid fa-xmark" style="color:red;"></i></td>
+      </tr>
+      <tr>
+        <td>Reassign</td>
+        <td><i class="fa-solid fa-check" style="color:green;"></i></td>
+        <td><i class="fa-solid fa-check" style="color:green;"></i></td>
+        <td><i class="fa-solid fa-xmark" style="color:red;"></i></td>
+      </tr>
+      <tr>
+        <td>Hoisting</td>
+        <td>undefined</td>
+        <td>TDZ</td>
+        <td>TDZ</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
