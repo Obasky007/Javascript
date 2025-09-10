@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASS 3</title>
+    <style>
+        .nav {
+            background-color: rgb(133, 105, 62);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 60%;
+            margin: auto;
+            gap: 20px;
+            position: sticky;
+            top: 15px;
+        }
+
+        ol {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: bisque;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: rgba(128, 128, 128, 0.517);
+            padding: 6px;
+            border-radius: 30px;
+        }
+
+        pre {
+            background-color: black;
+            color: green;
+            font-size: 13px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <h1 style="color: bisque;">
+            JavaScript
+        </h1>
+        <div class="links">
+            <ol>
+                <li><a href="index.html">ASS 1</a></li>
+                <li><a href="ass2.html">ASS 2</a></li>
+                <li><a href="ass3.html">ASS 3</a></li>
+                <li><a href="ass4.html">ASS 4</a></li>
+            </ol>
+        </div>
+    </nav>
+    <br><br>
+    <div class="parent">
+        <div>
+            <h1>CODE</h1>
+            <pre>
+          <code>
+              let challenge = '30 Days Of Javascript'
+              console.log (challenge)
+  
+              let check = challenge.length
+              console.log(check)
+  
+              upper = challenge.toUpperCase()
+              console.log(upper)
+  
+              lower = challenge.toLowerCase()
+              console.log(lower)
+  
+              slice = challenge.substring(0,2)
+              console.log(slice)
+  
+              cut = challenge.substring(3)
+              console.log(cut)
+  
+              check = challenge.includes('D')
+              console.log(check)
+  
+              split = challenge.split(' ')
+              console.log(split)
+  
+              ptform = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
+              pform = ptform.split(',')
+              console.log(pform)
+             </code>
+          </pre>
+        </div>
+        <div class="result">
+            <h1>RESULT</h1>
+            <pre>
+                <code>   
+                  ﻿
+                  ass3.js:2 30 Days Of Javascript
+                  ass3.js:5 the length is 21
+                  ass3.js:7 30 DAYS OF JAVASCRIPT
+                  ass3.js:9 30 days of javascript
+                  ass3.js:11 30
+                  ass3.js:13 Days Of Javascript
+                  ass3.js:15 true
+                  ass3.js:17 
+                  (4) ['30', 'Days', 'Of', 'Javascript']
+                  ass3.js:20 
+                  (7) ['facebook', ' google', ' microsoft', ' apple', ' ibm', ' oracle', ' amazon']
+                  ﻿
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script src="ass3.js"></script>
+</body>
+
+</html>

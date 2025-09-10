@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASS 4</title>
+    <style>
+        .nav {
+            background-color: rgb(133, 105, 62);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 60%;
+            margin: auto;
+            gap: 20px;
+            position: sticky;
+            top: 15px;
+        }
+
+        ol {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: bisque;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: rgba(128, 128, 128, 0.517);
+            padding: 6px;
+            border-radius: 30px;
+        }
+
+        pre {
+            background-color: black;
+            color: green;
+            font-size: 13px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <h1 style="color: bisque;">
+            JavaScript
+        </h1>
+        <div class="links">
+            <ol>
+                <li><a href="index.html">ASS 1</a></li>
+                <li><a href="ass2.html">ASS 2</a></li>
+                <li><a href="ass3.html">ASS 3</a></li>
+                <li><a href="ass4.html">ASS 4</a></li>
+            </ol>
+        </div>
+    </nav>
+    <br><br>
+    <div>
+        <div>
+            <h1>CODE</h1>
+            <pre>
+        <code>
+            let now = new Date()
+
+            sec = now.getSeconds()
+
+            mins = now.getMinutes()
+
+            now = now.getHours()
+            
+            
+            if (now >= 1 && now < 12) {
+                console.log('Good Morning')
+                console.log(`The Time Is ${now}:${mins}:${sec}`)
+            }
+
+            else if(now >= 12 && now <= 16){
+                console.log("Good Afternoon")
+                console.log(`The Time Is ${now}:${mins}:${sec}`)
+            }
+
+            else if (now >= 17 && now <= 24){
+                console.log('Good Evening')
+                console.log(`The Time Is ${now}:${mins}:${sec}`)
+            }
+        </code>
+    </pre>
+        </div>
+        <div class="result">
+            <h1>RESULT</h1>
+            <pre>
+                <code>            
+                  ﻿
+                  ass4.js:8 Good Morning
+                  ass4.js:9 The Time Is 2:54:49
+                </code>
+            </pre>
+        </div>
+    </div>
+    <script src="ass4.js"></script>
+</body>
+
+</html>
