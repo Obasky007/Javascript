@@ -1,23 +1,32 @@
-let now = new Date()
+let Time = new Date()
 
-sec = now.getSeconds()
+let sec = Time.getSeconds()
 
-mins = now.getMinutes()
+let mins = Time.getMinutes()
 
-now = now.getHours()
+let time = Time.getHours()
+
+let myName = prompt('What Is Your Name ?')
+
+myName = myName.trim()
 
 
-if (now >= 1 && now < 12) {
-    console.log('Hello, Good Morning')
-    console.log(`The Time Is ${now}:${mins}:${sec}`)
+if (time >= 1 && time < 12 && myName !== '') {
+    alert(`Good Morning ${myName}`)
+    alert(`The Time Is ${time}:${mins}:${sec}`)
 }
 
-else if (now >= 12 && now <= 16) {
-    console.log("Hello, Good Afternoon")
-    console.log(`The Time Is ${now}:${mins}:${sec}`)
+else if (time >= 12 && time <= 16 && myName !== '') {
+    alert(`Good Afternoon ${myName}`)
+    alert(`The Time Is ${time}:${mins}:${sec}`)
 }
 
-else if (now >= 17 && now <= 24) {
-    console.log('Hello, Good Evening')
-    console.log(`The Time Is ${now}:${mins}:${sec}`)
+else if (time >= 17 && time <= 24 && myName !== '') {
+    alert(`Good Evening ${myName}`)
+    alert(`The Time Is ${time}:${mins}:${sec}`)
 }
+
+else { 
+    alert('Did Not Get Your Name, Please Reload')
+}
+

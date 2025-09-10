@@ -68,28 +68,28 @@
             <h1>CODE</h1>
             <pre>
         <code>
-            let now = new Date()
+            let Time = new Date()
 
-            sec = now.getSeconds()
+            sec = Time.getSeconds()
 
-            mins = now.getMinutes()
+            mins = Time.getMinutes()
 
-            now = now.getHours()
+            Time = Time.getHours()
             
             
-            if (now >= 1 && now < 12) {
+            if (Time >= 1 && Time < 12) {
                 console.log('Good Morning')
-                console.log(`The Time Is ${now}:${mins}:${sec}`)
+                console.log(`The Time Is ${Time}:${mins}:${sec}`)
             }
 
-            else if(now >= 12 && now <= 16){
+            else if(Time >= 12 && Time <= 16){
                 console.log("Good Afternoon")
-                console.log(`The Time Is ${now}:${mins}:${sec}`)
+                console.log(`The Time Is ${Time}:${mins}:${sec}`)
             }
 
-            else if (now >= 17 && now <= 24){
+            else if (Time >= 17 && Time <= 24){
                 console.log('Good Evening')
-                console.log(`The Time Is ${now}:${mins}:${sec}`)
+                console.log(`The Time Is ${Time}:${mins}:${sec}`)
             }
         </code>
     </pre>
@@ -98,9 +98,8 @@
             <h1>RESULT</h1>
             <pre>
                 <code>            
-                  ﻿
                   ass4.js:8 Hello, Good Afternoon
-                  ass4.js:9 The Time Is 12:44:49
+                  ass4.js:9 The Time Is 1:12:49
                 </code>
             </pre>
         </div>
