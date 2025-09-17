@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+        .nav {
+            background-color: rgb(133, 105, 62);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: fit-content;
+            padding: 5px;
+            margin: auto;
+            gap: 20px;
+            position: sticky;
+            top: 15px;
+        }
+
+        ol {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: bisque;
+            text-decoration: none;
+        }
+
+        a:hover {
+           color: black;
+        }
+
+        pre {
+            background-color: black;
+            color: green;
+            font-size: 13px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        }
+
+        button {
+            background-color: rgb(133, 105, 62);
+            color: bisque;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(105, 78, 40);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <h1 style="color: bisque;">
+            JavaScript
+        </h1>
+        <div class="links">
+            <ol>
+                <li><a href="index.html">DAY 1</a></li>
+                <li><a href="ass2.html">DAY 2</a></li>
+                <li><a href="ass3.html">DAY 3</a></li>
+                <li><a href="ass4.html">DAY 4</a></li>
+                <li><a href="ass5.html">DAY 5</a></li>
+                <li><a href="functions.html">DAY 6</a></li>
+
+            </ol>
+        </div>
+    </nav>
+    <h1>Function</h1>
+    <button onclick='mathe()'>CALCULATOR</button>
+    <pre>
+        <code>
+             const mathe = () => {
+                 let firstValue = prompt('First Value')
+                 let operator = prompt('Operator (  *  ,   -  ,   +  ,   /  )')
+                 let secondValue = prompt('Second Value')
+                 
+                 firstValue = firstValue.trim()
+                 secondValue = secondValue.trim()
+             
+                 firstValue = Number(firstValue)
+                 secondValue = Number(secondValue)
+             
+                 if (isNaN(firstValue) || isNaN(secondValue)) {
+                     alert(`Input Error, Try Again`)
+                 }
+                 else if (firstValue === "" || secondValue === "") {
+                     alert(`Input Error, Try Again`)
+                 }
+                 else if (operator === '+') {
+                     alert(`The Sum Of ${firstValue} and ${secondValue} = ${firstValue + secondValue}`)
+                 }
+                 else if (operator === '-') {
+                     alert(`The Subtraction Of ${firstValue} and ${secondValue} = ${firstValue - secondValue}`)
+                 }
+                 else if (operator === '*') {
+                     alert(`The Multiplication Of ${firstValue} and ${secondValue} = ${firstValue * secondValue}`)
+                 }
+                 else if (operator === '/') {
+                     alert(`The Division Of ${firstValue} and ${secondValue} = ${firstValue / secondValue}`)
+                 }
+                 else (
+                     alert(`Input Error, Try Again`)
+                 )
+             }   
+        </code>
+    </pre>
+    <script src="functions.js"></script>
+</body>
+
+</html>

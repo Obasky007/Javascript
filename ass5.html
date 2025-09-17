@@ -33,9 +33,7 @@
         }
 
         a:hover {
-            background-color: rgba(128, 128, 128, 0.517);
-            padding: 6px;
-            border-radius: 30px;
+            color: black;
         }
 
         pre {
@@ -55,11 +53,12 @@
         </h1>
         <div class="links">
             <ol>
-                <li><a href="index.html">ASS 1</a></li>
-                <li><a href="ass2.html">ASS 2</a></li>
-                <li><a href="ass3.html">ASS 3</a></li>
-                <li><a href="ass4.html">ASS 4</a></li>
-                <li><a href="ass5.html">ASS 5</a></li>
+                <li><a href="index.html">DAY 1</a></li>
+                <li><a href="ass2.html">DAY 2</a></li>
+                <li><a href="ass3.html">DAY 3</a></li>
+                <li><a href="ass4.html">DAY 4</a></li>
+                <li><a href="ass5.html">DAY 5</a></li>
+                <li><a href="functions.html">DAY 6</a></li>
             </ol>
         </div>
     </nav>
@@ -69,25 +68,27 @@
         <h1>CODE</h1>
         <pre>
             <code>
-                let age = prompt("How Old Are You ?")
-
-                age = age.trim()
-                 
-                age = Number(age)
-                 
-                switch (true) {
-                    case isNaN(age) || age <= 0:
-                         alert("Didn't Get Your Age, Please Reload")
-                         break;
-                 
-                    case age >= 1 && age <= 17:
-                         alert(`You Are ${age} Years Old, You Are Not Eligible To Drive`)
-                         break;
-                         
-                    default:
-                         alert(`You Are ${age} Years Old, You Are Eligible To Drive`)
-                         break;
+              let age = prompt("How Old Are You ?")
+              let yearsLeft = 18 - age
+              
+              age = age.trim()
+              
+              age = Number(age)
+              
+              switch (true) {
+                  case isNaN(age) || age <= 0:
+                      alert("Didn't Get Your Age, Please Reload")
+                      break;
+              
+                  case age >= 1 && age <= 17:
+                      alert(`You Are Not Eligible To Drive, You Have ${yearsLeft} Years Left To Drive,`)
+                      break;
+                      
+                  default:
+                      alert(`You Are ${age} Years Old, You Are Eligible To Drive`)
+                      break;
                 }   
+ 
             </code>
         </pre>
     </div>

@@ -1,4 +1,5 @@
 let age = prompt("How Old Are You ?")
+let yearsLeft = 18 - age
 
 age = age.trim()
 
@@ -10,7 +11,7 @@ switch (true) {
         break;
 
     case age >= 1 && age <= 17:
-        alert(`You Are ${age} Years Old, You Are Not Eligible To Drive`)
+        alert(`You Are Not Eligible To Drive, You Have ${yearsLeft} Years Left To Drive,`)
         break;
         
     default:
