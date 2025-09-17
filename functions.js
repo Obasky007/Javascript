@@ -2,13 +2,10 @@ const mathe = () => {
     let firstValue = prompt('First Value')
     let operator = prompt('Operator (  *  ,   -  ,   +  ,   /  )')
     let secondValue = prompt('Second Value')
-    
     firstValue = firstValue.trim()
     secondValue = secondValue.trim()
-
     firstValue = Number(firstValue)
     secondValue = Number(secondValue)
-
     if (isNaN(firstValue) || isNaN(secondValue)) {
         alert(`Input Error, Try Again`)
     }
