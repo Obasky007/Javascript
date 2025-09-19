@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ass 5</title>
+    <title>DOM</title>
     <style>
         .nav {
             background-color: rgb(133, 105, 62);
@@ -43,11 +43,24 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-style: italic;
         }
+
+        button {
+            background-color: rgb(133, 105, 62);
+            color: bisque;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(105, 78, 40);
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
-     <nav class="nav">
+      <nav class="nav">
         <h1 style="color: bisque;">
             JavaScript
         </h1>
@@ -63,37 +76,26 @@
             </ol>
         </div>
     </nav>
-    <h1>Conditionals</h1>
-    <h3>Driver's Age</h3>
-    <div class="parent">
-        <h1>CODE</h1>
-        <pre>
-            <code>
-              let age = prompt("How Old Are You ?")
-              let yearsLeft = 18 - age
-              
-              age = age.trim()
-              
-              age = Number(age)
-              
-              switch (true) {
-                  case isNaN(age) || age <= 0:
-                      alert("Didn't Get Your Age, Please Reload")
-                      break;
-              
-                  case age >= 1 && age <= 17:
-                      alert(`You Are Not Eligible To Drive, You Have ${yearsLeft} Years Left To Drive,`)
-                      break;
-                      
-                  default:
-                      alert(`You Are ${age} Years Old, You Are Eligible To Drive`)
-                      break;
-                }   
- 
-            </code>
-        </pre>
-    </div>
-    <script src="ass5.js"></script>
+    <h1>DOM</h1>
+    <p id="p1" class="paragraph">Lorem ipsum dolor sit amet.</p>
+    <p id="p2" class="paragraph">Lorem ipsum dolor sit amet.</p>
+    <p id="p3" class="paragraph">Lorem ipsum dolor sit amet.</p>
+    <p id="p4" class="paragraph">Lorem ipsum dolor sit amet.</p>
+
+    <h1>Code</h1>
+    <pre>
+        <code>
+            console.log(document.querySelector('p'));
+
+            console.log(document.querySelector('#p1'))
+            console.log(document.querySelector('#p2'))
+            console.log(document.querySelector('#p3'))
+            console.log(document.querySelector('#p4'))
+
+            console.log(document.querySelectorAll('p'))
+        </code>
+    </pre>
+    <script src="dom.js"></script>
 </body>
 
 </html>
