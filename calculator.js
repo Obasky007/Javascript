@@ -72,9 +72,18 @@ function div() {
 function retirement() {
     let age = document.getElementById('age').value
     let retired = 60 - age
+    let supposed = age - 60
     if (age === '') {
         document.getElementById('retire').textContent = `Type In Your Age`
         document.getElementById('retire').style.color = `red`
+    }
+    else if (age = 60) {
+        document.getElementById('retire').style.color = `orange`
+        document.getElementById('retire').textContent = `You are ${age} years old, you are to retire this year`
+    }
+    else if (age >= 61) {
+        document.getElementById('retire').style.color = `blue`
+        document.getElementById('retire').textContent = `You are ${age} years old, you supposed to have retired ${supposed} years ago`
     }
     else {
         document.getElementById('retire').style.color = `green`
