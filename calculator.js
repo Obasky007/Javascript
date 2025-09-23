@@ -11,6 +11,7 @@ function add() {
     else {
         resultElement.style.color = "green";
     }
+    document.getElementById('p').textContent = "+"
     let num1 = Number(firstValue);
     let num2 = Number(secondValue);
     let result = num1 + num2;
@@ -28,6 +29,7 @@ function sub() {
     else {
         resultElement.style.color = "rgb(68, 51, 223)";
     }
+    document.getElementById('p').textContent = "-"
     let num1 = Number(firstValue);
     let num2 = Number(secondValue);
     let result = num1 - num2;
@@ -45,6 +47,7 @@ function multiply() {
     else {
         resultElement.style.color = "rgb(200, 0, 255)";
     }
+    document.getElementById('p').textContent = "*"
     let num1 = Number(firstValue);
     let num2 = Number(secondValue);
     let result = num1 * num2;
@@ -62,6 +65,7 @@ function div() {
     else {
         resultElement.style.color = "blue";
     }
+    document.getElementById('p').textContent = "/"
     let num1 = Number(firstValue);
     let num2 = Number(secondValue);
     let result = num1 / num2;
@@ -77,7 +81,7 @@ function retirement() {
         document.getElementById('retire').textContent = `Type In Your Age`
         document.getElementById('retire').style.color = `red`
     }
-    else if (age = 60) {
+    else if (age === 60) {
         document.getElementById('retire').style.color = `orange`
         document.getElementById('retire').textContent = `You are ${age} years old, you are to retire this year`
     }

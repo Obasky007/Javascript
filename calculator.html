@@ -105,7 +105,7 @@
         }
 
         .retirement {
-            background-color: lightblue;
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -160,6 +160,14 @@
             background-color: rgb(105, 78, 40);
             cursor: pointer;
         }
+        h1, h2, h3, h4 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .inputs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -184,8 +192,11 @@
     <div class="container">
         <div class="parent">
             <h1>Simple Calculator</h1>
+            <div class="inputs">
             <input type="number" id="first">
+            <h1 id="p"></h1>
             <input type="number" id="second">
+            </div>
             <div>
                 <h3>Operators</h3>
                 <div class="buttons">
@@ -206,14 +217,13 @@
             <input type="number" id="age" placeholder="Write Your Age">
             <button onclick="retirement()">Click Here</button>
             <h4 id="retire">Retire:</h4>
-            <p id="p"></p>
         </div>
     </div>
 
     <h3>CODE</h3>
     <pre>
-        <code>
-            // CALCULATOR
+      <code>
+        // CALCULATOR
             function add() {
                 let firstValue = document.getElementById('first').value;
                 let secondValue = document.getElementById('second').value;
@@ -226,6 +236,7 @@
                 else {
                     resultElement.style.color = "green";
                 }
+                document.getElementById('p').textContent = "+"
                 let num1 = Number(firstValue);
                 let num2 = Number(secondValue);
                 let result = num1 + num2;
@@ -241,8 +252,9 @@
                     return;
                 }
                 else {
-                    resultElement.style.color = "yellow";
+                    resultElement.style.color = "rgb(68, 51, 223)";
                 }
+                document.getElementById('p').textContent = "-"
                 let num1 = Number(firstValue);
                 let num2 = Number(secondValue);
                 let result = num1 - num2;
@@ -260,6 +272,7 @@
                 else {
                     resultElement.style.color = "rgb(200, 0, 255)";
                 }
+                document.getElementById('p').textContent = "*"
                 let num1 = Number(firstValue);
                 let num2 = Number(secondValue);
                 let result = num1 * num2;
@@ -277,6 +290,7 @@
                 else {
                     resultElement.style.color = "blue";
                 }
+                document.getElementById('p').textContent = "/"
                 let num1 = Number(firstValue);
                 let num2 = Number(secondValue);
                 let result = num1 / num2;
@@ -287,17 +301,25 @@
             function retirement() {
                 let age = document.getElementById('age').value
                 let retired = 60 - age
+                let supposed = age - 60
                 if (age === '') {
                     document.getElementById('retire').textContent = `Type In Your Age`
                     document.getElementById('retire').style.color = `red`
+                }
+                else if (age === 60) {
+                    document.getElementById('retire').style.color = `orange`
+                    document.getElementById('retire').textContent = `You are ${age} years old, you are to retire this year`
+                }
+                else if (age >= 61) {
+                    document.getElementById('retire').style.color = `blue`
+                    document.getElementById('retire').textContent = `You are ${age} years old, you supposed to have retired ${supposed} years ago`
                 }
                 else {
                     document.getElementById('retire').style.color = `green`
                     document.getElementById('retire').textContent = `You are ${age} years old, you have ${retired} more years to retire`
                 }
             }
-
-        </code>
+      </code>
     </pre>
     <script src="calculator.js"></script>
 </body>
