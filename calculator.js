@@ -26,7 +26,7 @@ function sub() {
         return;
     }
     else {
-        resultElement.style.color = "yellow";
+        resultElement.style.color = "rgb(68, 51, 223)";
     }
     let num1 = Number(firstValue);
     let num2 = Number(secondValue);
