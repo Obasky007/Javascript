@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .parent {
+            background-color: gray;
+            padding: 7px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top,
+        .bottom {
+            display: flex;
+            justify-content: center;
+            margin: 5px 0;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: #333;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .add {
+            background-color: green;
+        }
+
+        .add:hover {
+            background-color: darkgreen;
+        }
+
+        .subtract {
+            background-color: yellow;
+        }
+
+        .subtract:hover {
+            background-color: gold;
+        }
+
+        .multiply {
+            background-color: rgb(200, 0, 255);
+        }
+
+        .multiply:hover {
+            background-color: rgb(150, 0, 200);
+        }
+
+        #age {
+            width: 250px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        #retire {
+            margin-top: 20px;
+            color: #333;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .retirement {
+            background-color: lightblue;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .nav {
+            background-color: rgb(133, 105, 62);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px;
+            gap: 20px;
+            position: sticky;
+            top: 15px;
+        }
+
+        ol {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: bisque;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        pre {
+            background-color: black;
+            color: green;
+            font-size: 13px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        }
+
+        button {
+            background-color: rgb(133, 105, 62);
+            color: bisque;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(105, 78, 40);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <h1 style="color: bisque;">
+            JavaScript
+        </h1>
+        <div class="links">
+            <ol>
+                <li><a href="index.html">DAY 1</a></li>
+                <li><a href="ass2.html">DAY 2</a></li>
+                <li><a href="ass3.html">DAY 3</a></li>
+                <li><a href="ass4.html">DAY 4</a></li>
+                <li><a href="ass5.html">DAY 5</a></li>
+                <li><a href="functions.html">DAY 6</a></li>
+                <li><a href="dom.html">DAY 7</a></li>
+                <li><a href="calculator.html">DAY 8</a></li>
+            </ol>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="parent">
+            <h1>Simple Calculator</h1>
+            <input type="number" id="first">
+            <input type="number" id="second">
+            <div>
+                <h3>Operators</h3>
+                <div class="buttons">
+                    <div class="top">
+                        <button class="add" onclick="add()">Add</button>
+                        <button class="subtract" onclick="sub()">Subtract</button>
+                    </div>
+                    <div class="bottom">
+                        <button class="multiply" onclick="multiply()">Multiply</button>
+                        <button onclick="div()">Divide</button>
+                    </div>
+                </div>
+            </div>
+            <h2 id="result">Result: </h2>
+        </div>
+        <div class="retirement">
+            <h1>Retirement Calculator</h1>
+            <input type="number" id="age" placeholder="Write Your Age">
+            <button onclick="retirement()">Click Here</button>
+            <h4 id="retire">Retire:</h4>
+            <p id="p"></p>
+        </div>
+    </div>
+
+    <h3>CODE</h3>
+    <pre>
+        <code>
+            // CALCULATOR
+            function add() {
+                let firstValue = document.getElementById('first').value;
+                let secondValue = document.getElementById('second').value;
+                let resultElement = document.getElementById('result');
+                if (firstValue === "" || secondValue === "") {
+                    resultElement.textContent = "Please enter a number in both fields";
+                    resultElement.style.color = "red";
+                    return;
+                }
+                else {
+                    resultElement.style.color = "green";
+                }
+                let num1 = Number(firstValue);
+                let num2 = Number(secondValue);
+                let result = num1 + num2;
+                resultElement.textContent = `The sum of ${num1} and ${num2} is ${result}`;
+            }
+            function sub() {
+                let firstValue = document.getElementById('first').value;
+                let secondValue = document.getElementById('second').value;
+                let resultElement = document.getElementById('result');
+                if (firstValue === "" || secondValue === "") {
+                    resultElement.textContent = "Please enter a number in both fields";
+                    resultElement.style.color = "red";
+                    return;
+                }
+                else {
+                    resultElement.style.color = "yellow";
+                }
+                let num1 = Number(firstValue);
+                let num2 = Number(secondValue);
+                let result = num1 - num2;
+                resultElement.textContent = `The difference of ${num1} and ${num2} is ${result}`;
+            }
+            function multiply() {
+                let firstValue = document.getElementById('first').value;
+                let secondValue = document.getElementById('second').value;
+                let resultElement = document.getElementById('result');
+                if (firstValue === "" || secondValue === "") {
+                    resultElement.textContent = "Please enter a number in both fields";
+                    resultElement.style.color = "red";
+                    return;
+                }
+                else {
+                    resultElement.style.color = "rgb(200, 0, 255)";
+                }
+                let num1 = Number(firstValue);
+                let num2 = Number(secondValue);
+                let result = num1 * num2;
+                resultElement.textContent = `The product of ${num1} and ${num2} is ${result}`;
+            }
+            function div() {
+                let firstValue = document.getElementById('first').value;
+                let secondValue = document.getElementById('second').value;
+                let resultElement = document.getElementById('result');
+                if (firstValue === "" || secondValue === "") {
+                    resultElement.textContent = "Please enter a number in both fields";
+                    resultElement.style.color = "red";
+                    return;
+                }
+                else {
+                    resultElement.style.color = "blue";
+                }
+                let num1 = Number(firstValue);
+                let num2 = Number(secondValue);
+                let result = num1 / num2;
+                resultElement.textContent = `The division of ${num1} and ${num2} is ${result}`;
+            }
+
+            // RETIREMENT CALCULATOR
+            function retirement() {
+                let age = document.getElementById('age').value
+                let retired = 60 - age
+                if (age === '') {
+                    document.getElementById('retire').textContent = `Type In Your Age`
+                    document.getElementById('retire').style.color = `red`
+                }
+                else {
+                    document.getElementById('retire').style.color = `green`
+                    document.getElementById('retire').textContent = `You are ${age} years old, you have ${retired} more years to retire`
+                }
+            }
+
+        </code>
+    </pre>
+    <script src="calculator.js"></script>
+</body>
+
+</html>

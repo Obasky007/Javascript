@@ -1,8 +1,20 @@
 console.log(document.querySelector('p'));
 
-console.log(document.querySelector('#p1'))
-console.log(document.querySelector('#p2'))
-console.log(document.querySelector('#p3'))
-console.log(document.querySelector('#p4'))
+
+first = document.querySelector('#p1')
+first.className = 'fir-paragraph'
+console.log(first)
+
+second = document.querySelector('#p2')
+second.className = 'sec-paragraph'
+console.log(second)
+
+third = document.querySelector('#p3')
+third.className = 'thir-paragraph'
+console.log(third)
+
+fourth = document.querySelector('#p4')
+fourth.className = 'four-paragraph'
+console.log(fourth)
 
 console.log(document.querySelectorAll('p'))
