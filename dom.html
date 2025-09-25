@@ -5,36 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
-    <!-- <link rel="stylesheet" href="output.css"> -->
+    <link rel="stylesheet" href="output.css">
     <style>
-        .nav {
-            background-color: rgb(133, 105, 62);
-            border-radius: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 5px;
-            gap: 20px;
-            position: sticky;
-            top: 15px;
-        }
-
-        ol {
-            list-style-type: none;
-            display: flex;
-            gap: 30px;
-            margin-bottom: 5px;
-        }
-
-        a {
-            color: bisque;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: black;
-        }
-
         pre {
             background-color: black;
             color: green;
@@ -42,40 +14,75 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-style: italic;
         }
-
-        button {
-            background-color: rgb(133, 105, 62);
-            color: bisque;
-            font-size: 20px;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        button:hover {
-            background-color: rgb(105, 78, 40);
-            cursor: pointer;
-        }
     </style>
 </head>
 
 <body>
-    <nav class="nav">
-        <h1 style="color: bisque;">
-            JavaScript
-        </h1>
-        <div class="links">
-            <ol>
-                <li><a href="index.html">DAY 1</a></li>
-                <li><a href="ass2.html">DAY 2</a></li>
-                <li><a href="ass3.html">DAY 3</a></li>
-                <li><a href="ass4.html">DAY 4</a></li>
-                <li><a href="ass5.html">DAY 5</a></li>
-                <li><a href="functions.html">DAY 6</a></li>
-                <li><a href="dom.html">DAY 7</a></li>
-                <li><a href="calculator.html">DAY 8</a></li>
-            </ol>
-        </div>
-    </nav>
+  <nav class="bg-white border-gray-200 sticky top-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap">Javascript Assignment</span>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+          <li>
+          </li>
+          <li>
+            <a href="index.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
+          </li>
+          <li>
+            <a href="ass2.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">ASS
+              2</a>
+          </li>
+          <li>
+            <a href="ass3.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">ASS
+              3</a>
+          </li>
+          <li>
+            <a href="ass4.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Greetings</a>
+          </li>
+          <li>
+            <a href="ass5.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Conditional
+              Statement</a>
+          </li>
+          <li>
+            <a href="functions.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Functions</a>
+          </li>
+          <li>
+            <a href="dom.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">DOM</a>
+          </li>
+          <li>
+            <a href="calculator.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Calculator</a>
+          </li>
+          <li>
+            <a href="interest.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Interest</a>
+          </li>
+          <li>
+            <a href="array.html"
+              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Array</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br>
     <h1>DOM</h1>
     <p id="p1">Lorem ipsum dolor sit amet.</p>
     <p id="p2">Lorem ipsum dolor sit amet.</p>

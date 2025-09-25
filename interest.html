@@ -4,16 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASS 3</title>
+    <title>Interest Calculator of 15%</title>
     <link rel="stylesheet" href="output.css">
     <style>
+        h1{
+            font-size: 200%;
+            font-weight: bold;
+        }
+        .parent {
+            font-family: Arial, Helvetica, sans-serif;
+            width: fit-content;
+            height: 350px;
+            background-color: gainsboro;
+            box-shadow: 0 0 10px rgba(139, 125, 125, 0.1);
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+
+        input,
+        select {
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #66afe9;
+            box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #333;
+            text-align: center;
+            width: 300px;
+        }
+
+        .holder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .holder:focus-within .sign {
+            border-right-color: none;
+            border-color: #66afe9;
+            box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+        }
+
+        .sign {
+            background-color: white;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border: 1px solid #ccc;
+            border-right: none;
+            position: relative;
+            left: 10px;
+            bottom: 10px;
+            font-weight: bold;
+        }
+
         pre {
             background-color: black;
             color: green;
             font-size: 13px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-style: italic;
-
         }
     </style>
 </head>
@@ -85,63 +160,64 @@
         </div>
     </nav>
     <br><br>
-    <div class="parent">
-        <div>
-            <h1>CODE</h1>
-            <pre>
-          <code>
-              let challenge = '30 Days Of Javascript'
-              console.log (challenge)
-  
-              let check = challenge.length
-              console.log(check)
-  
-              upper = challenge.toUpperCase()
-              console.log(upper)
-  
-              lower = challenge.toLowerCase()
-              console.log(lower)
-  
-              slice = challenge.substring(0,2)
-              console.log(slice)
-  
-              cut = challenge.substring(3)
-              console.log(cut)
-  
-              check = challenge.includes('D')
-              console.log(check)
-  
-              split = challenge.split(' ')
-              console.log(split)
-  
-              ptform = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
-              pform = ptform.split(',')
-              console.log(pform)
-             </code>
-          </pre>
+    <div class="parent m-auto">
+        <h1>Interest Calculator</h1>
+        <div class="holder">
+            <label for="amount" class="sign">$</label>
+            <input type="number" id="amount" placeholder="Enter Amount">
         </div>
-        <div class="result">
-            <h1>RESULT</h1>
-            <pre>
-                <code>   
-                  ﻿
-                  ass3.js:2 30 Days Of Javascript
-                  ass3.js:5 the length is 21
-                  ass3.js:7 30 DAYS OF JAVASCRIPT
-                  ass3.js:9 30 days of javascript
-                  ass3.js:11 30
-                  ass3.js:13 Days Of Javascript
-                  ass3.js:15 true
-                  ass3.js:17 
-                  (4) ['30', 'Days', 'Of', 'Javascript']
-                  ass3.js:20 
-                  (7) ['facebook', ' google', ' microsoft', ' apple', ' ibm', ' oracle', ' amazon']
-                  ﻿
-                </code>
-            </pre>
-        </div>
+        <select id="month">
+            <option value="duration">DURATION</option>
+            <option value="1">1 MONTH</option>
+            <option value="2">2 MONTH</option>
+            <option value="3">3 MONTH</option>
+            <option value="4">4 MONTH</option>
+        </select><br><br>
+        <button id="btn" onclick="calculator()">Calculate Interest</button>
+        <h4 id="result" onclick="calculator()"></h4>
     </div>
-    <script src="ass3.js"></script>
+    <br><br>
+    <pre>
+        <h1>CODE:</h1>
+        <code>
+            const message = document.getElementById('result')
+                const interest = 0.15
+
+                const calculator = () => {
+                    const amount = Number(document.getElementById('amount').value)
+                    const month = Number(document.getElementById('month').value)
+                    const interestAmount = amount * interest
+                    if (isNaN(amount) || amount === '' || isNaN(month)) {
+                        message.textContent = 'FILL IN THE FIELDS PROPERLY'
+                        message.style.color = 'red'
+                    }
+                    else if (month === 1) {
+                        const total = amount + interestAmount
+                        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTH TIME`
+                        message.style.color = '#333'
+                    }
+                    else if (month === 2) {
+                        const total = amount + (interestAmount * month)
+                        newTotal = total / month
+                        message.style.color = '#333'
+                        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+                    }
+                    else if (month === 3) {
+                        const total = amount + (interestAmount * month)
+                        newTotal = total / month
+                        message.style.color = '#333'
+                        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+                    }
+                    else if (month === 4) {
+                        const total = amount + (interestAmount * month)
+                        newTotal = total / month
+                        message.style.color = '#333'
+                        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+                    }
+                }
+        </code>
+    </pre>
+    <script src="interest.js"></script>
 </body>
 
 </html>

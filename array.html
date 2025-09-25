@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASS 3</title>
+    <title>Array</title>
     <link rel="stylesheet" href="output.css">
     <style>
         pre {
@@ -13,7 +13,7 @@
             font-size: 13px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-style: italic;
-
+            width: fit-content;
         }
     </style>
 </head>
@@ -84,64 +84,49 @@
             </div>
         </div>
     </nav>
-    <br><br>
-    <div class="parent">
-        <div>
-            <h1>CODE</h1>
-            <pre>
-          <code>
-              let challenge = '30 Days Of Javascript'
-              console.log (challenge)
-  
-              let check = challenge.length
-              console.log(check)
-  
-              upper = challenge.toUpperCase()
-              console.log(upper)
-  
-              lower = challenge.toLowerCase()
-              console.log(lower)
-  
-              slice = challenge.substring(0,2)
-              console.log(slice)
-  
-              cut = challenge.substring(3)
-              console.log(cut)
-  
-              check = challenge.includes('D')
-              console.log(check)
-  
-              split = challenge.split(' ')
-              console.log(split)
-  
-              ptform = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
-              pform = ptform.split(',')
-              console.log(pform)
-             </code>
-          </pre>
-        </div>
-        <div class="result">
-            <h1>RESULT</h1>
-            <pre>
-                <code>   
-                  ﻿
-                  ass3.js:2 30 Days Of Javascript
-                  ass3.js:5 the length is 21
-                  ass3.js:7 30 DAYS OF JAVASCRIPT
-                  ass3.js:9 30 days of javascript
-                  ass3.js:11 30
-                  ass3.js:13 Days Of Javascript
-                  ass3.js:15 true
-                  ass3.js:17 
-                  (4) ['30', 'Days', 'Of', 'Javascript']
-                  ass3.js:20 
-                  (7) ['facebook', ' google', ' microsoft', ' apple', ' ibm', ' oracle', ' amazon']
-                  ﻿
-                </code>
-            </pre>
-        </div>
-    </div>
-    <script src="ass3.js"></script>
+    <h1>Array</h1>
+    <pre>
+        <h1>CODE:</h1>
+        <code>
+            // COUNTRIES
+            const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+            console.log(countries);
+            console.log(countries.push('Ethiopia'));
+            console.log(countries)
+
+            // WEBTECHS
+            const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+            console.log(webTechs);
+            console.log(webTechs.push('Saas'));
+            console.log(webTechs);
+
+            // SHOPPING CART
+            const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+            console.log(shoppingCart);
+            console.log(shoppingCart.unshift('Meat'));
+            console.log(shoppingCart);
+            console.log(shoppingCart.push('Sugar'));
+            console.log(shoppingCart);
+            console.log(shoppingCart.with(3, 'Green Tea'));
+        </code>
+        <h1>RESULT:</h1>
+        <code>
+            (11) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']0: "Albania"1: "Bolivia"2: "Canada"3: "Denmark"4: "Ethiopia"5: "Finland"6: "Germany"7: "Hungary"8: "Ireland"9: "Japan"10: "Kenya"11: "Ethiopia"length: 12[[Prototype]]: Array(0)
+            array.js:4 12
+            array.js:5 (12) ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya', 'Ethiopia']
+            array.js:9 (7) ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+            array.js:10 8
+            array.js:11 (8) ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB', 'Saas']
+            array.js:15 (4) ['Milk', 'Coffee', 'Tea', 'Honey']0: "Meat"1: "Milk"2: "Coffee"3: "Tea"4: "Honey"5: "Sugar"length: 6[[Prototype]]: Array(0)
+            array.js:16 5
+            array.js:17 (5) ['Meat', 'Milk', 'Coffee', 'Tea', 'Honey']
+            array.js:18 6
+            array.js:19 (6) ['Meat', 'Milk', 'Coffee', 'Tea', 'Honey', 'Sugar']
+            array.js:20 (6) ['Meat', 'Milk', 'Coffee', 'Green Tea', 'Honey', 'Sugar']
+        </code>
+    </pre>
+    <script src="array.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
