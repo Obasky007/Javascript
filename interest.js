@@ -32,4 +32,52 @@ const calculator = () => {
         message.style.color = '#333'
         message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
     }
+    else if (month === 5) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 6) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 7) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 8) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 9) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 10) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 11) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
+    else if (month === 12) {
+        const total = amount + (interestAmount * month)
+        newTotal = total / month
+        message.style.color = '#333'
+        message.textContent = `YOU ARE TO RETURN $${total} IN ${month} MONTHS TIME AND $${newTotal} EVERY MONTH`
+    }
 }
