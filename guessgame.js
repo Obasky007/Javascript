@@ -17,6 +17,7 @@ const guessBtn = () => {
     }
     else if (answer < 10 || answer > 25) {
         result.textContent = "Number is between 10 and 25";
+        result.style.color = "gray"
     }
     else if (answer === myNum) {
         result.textContent = `You guessed it right in ${attempts} attempts! The number was ${myNum}.`;
@@ -32,7 +33,7 @@ const guessBtn = () => {
     }
     else {
         result.textContent = `Game Over! The number was ${myNum}`;
-        result.style.color = "crimson";
+        result.style.color = "red";
         cta1.style.display = "none";
         cta2.style.display = "inline-block";
     }
