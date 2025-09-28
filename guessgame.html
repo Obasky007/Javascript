@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Number</title>
+    <style>
+        * {
+            font-family: cursive;
+        }
+
+        h1 {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .parent {
+            background: linear-gradient(to right, aquamarine, rgb(177, 255, 246));
+            width: fit-content;
+            padding: 30px;
+            border-radius: 20px;
+            margin: auto;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        input {
+            background: transparent;
+            width: 200px;
+            height: 45px;
+            border-radius: 10px;
+            border: 1px dotted gray;
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        input:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid teal;
+            background: #fff;
+        }
+
+        #result {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+            color: #333;
+            width: 300px;
+        }
+
+        button {
+            padding: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            width: 220px;
+        }
+
+        .cta1 {
+            border: 1px solid teal;
+            background-color: #e0fdfb;
+            color: teal;
+        }
+
+        .cta1:hover {
+            background-color: teal;
+            color: white;
+        }
+
+        .cta2 {
+            display: none;
+            border: 1px solid crimson;
+            background-color: #ffeaea;
+            color: crimson;
+        }
+
+        .cta2:hover {
+            background-color: crimson;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <h1>Guess My Number</h1>
+        <input type="number" id="input" placeholder="Guess My Number">
+        <p id="result"></p>
+        <br><br>
+        <button class="cta1" id="cta1" onclick="guessBtn()">Submit</button><br>
+        <button class="cta2" id="cta2" onclick="reset()">Reset</button>
+        <h3>Attempts: <span id="attempts">6</span></h3>
+    </div>
+    <br><br>
+    <pre>
+        <code>
+            let myNum = Math.floor(Math.random() * 16) + 10;
+            console.log(`number: ${myNum}`);
+
+            const cta1 = document.getElementById("cta1");
+            const cta2 = document.getElementById("cta2");
+            const attemptshtml = document.getElementById("attempts");
+            let attempts = 6;
+
+            const guessBtn = () => {
+                const input = document.getElementById("input").value;
+                const answer = Number(input);
+                let result = document.getElementById("result");
+
+                if (input === "" || isNaN(answer)) {
+                    result.textContent = "Input a valid number";
+                    result.style.color = "orange";
+                }
+                else if (answer < 10 || answer > 25) {
+                    result.textContent = "Number is between 10 and 25";
+                }
+                else if (answer === myNum) {
+                result.textContent = `You guessed it right in ${attempts} attempts! The number was ${myNum}.`;
+                    result.style.color = "green";
+                    cta1.style.display = 'none';
+                    cta2.style.display = 'inline-block';
+                }
+                else if (attempts > 0) {
+                    attempts--;
+                    attemptshtml.textContent = attempts;
+                    result.textContent = "Wrong guess, try again!";
+                    result.style.color = "red";
+                }
+                else {
+                    result.textContent = `Game Over! The number was ${myNum}`;
+                    result.style.color = "crimson";
+                    cta1.style.display = "none";
+                    cta2.style.display = "inline-block";
+                }
+            }
+
+            const reset = () => {
+                myNum = Math.floor(Math.random() * 16) + 10;
+                console.log(`New number: ${myNum}`);
+
+                const input = document.getElementById("input");
+                input.value = "";
+
+                let result = document.getElementById("result");
+                result.textContent = "";
+
+                attempts = 6;
+                attemptshtml.textContent = attempts;
+
+                cta2.style.display = "none";
+                cta1.style.display = "inline-block";
+            };
+        </code>
+    </pre>
+    <script src="guessgame.js"></script>
+</body>
+
+</html>
