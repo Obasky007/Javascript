@@ -22,6 +22,7 @@ const guessBtn = () => {
     else if (answer === myNum) {
         result.textContent = `You guessed it right in ${attempts} attempts! The number was ${myNum}.`;
         result.style.color = "green";
+        attemptshtml.textContent = "";
         cta1.style.display = 'none';
         cta2.style.display = 'inline-block';
     }
