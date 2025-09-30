@@ -94,7 +94,6 @@
             color: white;
         }
         </style>
-
     </head>
 
     <body>
@@ -120,8 +119,6 @@
                     id="navbar-default">
                     <ul
                         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-5 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-                        <li>
-                        </li>
                         <li>
                             <a href="index.html"
                                 class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
@@ -180,8 +177,11 @@
             <p id="result"></p>
             <br><br>
             <button class="cta1" id="cta1"
-                onclick="guessBtn()">Submit</button><br>
-            <button class="cta2" id="cta2" onclick="reset()">Reset</button>
+                onclick="guessBtn()">Submit
+            </button><br>
+            <button class="cta2" id="cta2" onclick="reset()">
+                Reset
+            </button>
             <h3>Attempts: <span id="attempts">6</span></h3>
         </div>
         <br><br>
@@ -244,7 +244,7 @@
                 cta1.style.display = "inline-block";
             };
         </code>
-    </pre>
+        </pre>
         <script src="guessgame.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
