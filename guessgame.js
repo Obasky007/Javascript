@@ -4,48 +4,63 @@ console.log(`number: ${myNum}`);
 const cta1 = document.getElementById("cta1");
 const cta2 = document.getElementById("cta2");
 const attemptshtml = document.getElementById("attempts");
+const input = document.getElementById("input");
 let attempts = 6;
 
 const guessBtn = () => {
-    const input = document.getElementById("input").value;
-    const answer = Number(input);
+    const answer = Number(input.value);
     let result = document.getElementById("result");
-    
-    if (input === "" || isNaN(answer)) {
-        result.textContent = "Input a valid number";
+
+    if (input.value === "" || isNaN(answer)) {
+        result.textContent = "Please enter a valid number";
         result.style.color = "orange";
+        input.value = "";
+        input.focus();
+        return;
     }
-    else if (answer < 10 || answer > 25) {
-        result.textContent = "Number is between 10 and 25";
-        result.style.color = "gray"
+
+    if (answer < 10 || answer > 25) {
+        result.textContent = "Number must be between 10 and 25";
+        result.style.color = "gray";
+        input.value = "";
+        input.focus();
+        return;
     }
-    else if (answer === myNum) {
-        result.textContent = `You guessed it right in ${attempts} attempts! The number was ${myNum}.`;
+
+    if (answer === myNum) {
+        result.textContent = `You guessed it right! The number was ${myNum}.`;
         result.style.color = "green";
         attemptshtml.textContent = "";
-        cta1.style.display = 'none';
-        cta2.style.display = 'inline-block';
+        input.disabled = true; 
+        cta1.style.display = "none";
+        cta2.style.display = "inline-block";
+        return;
     }
-    else if (attempts > 0) {
-        attempts--;
+
+    attempts--;
+    if (attempts > 0) {
         attemptshtml.textContent = attempts;
-        result.textContent = "Wrong guess, try again!";
+        result.textContent = `Wrong guess! ${attempts} attempts left.`;
         result.style.color = "red";
-    }
-    else {
+        input.value = "";
+        input.focus();
+    } else {
         result.textContent = `Game Over! The number was ${myNum}`;
         result.style.color = "red";
+        attemptshtml.textContent = "";
+        input.disabled = true; 
         cta1.style.display = "none";
         cta2.style.display = "inline-block";
     }
-}
+};
 
 const reset = () => {
     myNum = Math.floor(Math.random() * 16) + 10;
     console.log(`New number: ${myNum}`);
 
-    const input = document.getElementById("input");
     input.value = "";
+    input.disabled = false;
+    input.focus();
 
     let result = document.getElementById("result");
     result.textContent = "";

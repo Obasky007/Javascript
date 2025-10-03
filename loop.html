@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ASS 4</title>
+        <title>Loops</title>
         <link rel="stylesheet" href="output.css">
+
         <style>
         pre {
             background-color: black;
@@ -16,7 +16,6 @@
         }
     </style>
     </head>
-
     <body>
         <nav
             class="bg-white border-gray-200">
@@ -124,50 +123,21 @@
             </div>
         </nav>
         <br><br>
-        <div>
-            <div>
-                <h1>CODE</h1>
-                <pre>
-                <code>
-                    let Time = new Date()
-
-                    sec = Time.getSeconds()
-
-                    mins = Time.getMinutes()
-
-                    Time = Time.getHours()
-                    
-                    
-                    if (Time >= 1 && Time < 12) {
-                        console.log('Good Morning')
-                        console.log(`The Time Is ${Time}:${mins}:${sec}`)
-                    }
-
-                    else if(Time >= 12 && Time <= 16){
-                        console.log("Good Afternoon")
-                        console.log(`The Time Is ${Time}:${mins}:${sec}`)
-                    }
-
-                    else if (Time >= 17 && Time <= 24){
-                        console.log('Good Evening')
-                        console.log(`The Time Is ${Time}:${mins}:${sec}`)
-                    }
-                </code>
-            </pre>
-            </div>
-            <div class="result">
-                <h1>RESULT</h1>
-                <pre>
-                <code>            
-                  ass4.js:8 Hello, Good Afternoon
-                  ass4.js:9 The Time Is 1:12:49
-                </code>
-            </pre>
-            </div>
-        </div>
-        <script src="ass4.js"></script>
+        <h1>Loops</h1>
+        <pre>
+        <code>
+            for (let i = 100; i <= 200; i++) {
+                if (i % 2 === 0) {
+                    console.log(`${i} is a even number`)
+                }
+                else (
+                    console.log(`${i} is a odd number`)
+                )
+            }
+        </code>
+    </pre>
+        <script src="loop.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     </body>
-
 </html>
