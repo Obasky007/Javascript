@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guess My Number</title>
+        <title>Color Generator</title>
         <link rel="stylesheet" href="output.css">
         <style>
         * {
@@ -18,7 +18,8 @@
             margin-bottom: 10px;
             color: #333;
         }
-        h3{
+
+        h3 {
             font-size: 20px;
             font-weight: 600;
             color: #333;
@@ -31,13 +32,49 @@
             padding: 30px;
             border-radius: 20px;
             margin: auto;
+            margin-top: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             text-align: center;
         }
 
+        #color {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+            margin: auto;
+            width: 90px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            padding: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            width: 220px;
+            border: 1px solid teal;
+            background-color: #e0fdfb;
+            color: teal;
+            margin-bottom: 10px;
+        }
+
+        .button:hover {
+            background-color: teal;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         input {
             background: transparent;
-            width: 200px;
+            width: 230px;
             height: 45px;
             border-radius: 10px;
             border: 1px dotted gray;
@@ -55,51 +92,19 @@
             border: 1px solid teal;
             background: #fff;
         }
-
-        #result {
-            font-weight: bold;
-            font-size: 18px;
-            margin-top: 15px;
-            color: #333;
-            width: 300px;
-        }
-
-        button {
-            padding: 12px;
-            font-weight: bold;
-            font-size: 16px;
+        .password{
+            width: 230px;
+            height: 45px;
             border-radius: 10px;
-            width: 220px;
+            border: 1px dotted gray;
+            font-size: 18px;
+            margin: auto;
+            padding-top: 10px;
         }
-
-        .cta1 {
-            border: 1px solid teal;
-            background-color: #e0fdfb;
-            color: teal;
-            margin-bottom: 10px;
-        }
-
-        .cta1:hover {
-            background-color: teal;
-            color: white;
-        }
-
-        .cta2 {
-            display: none;
-            border: 1px solid crimson;
-            background-color: #ffeaea;
-            color: crimson;
-        }
-
-        .cta2:hover {
-            background-color: crimson;
-            color: white;
-        }
-        </style>
+    </style>
     </head>
 
     <body>
-
         <nav
             class="bg-white border-gray-200">
             <div
@@ -200,8 +205,9 @@
                                     </li>
                                     <li>
                                         <a href="color_generator.html"
-                                            class="block px-4 py-2 hover:bg-gray-100">Color $ Password Generator
-                                        </a>
+                                            class="block px-4 py-2 hover:bg-gray-100">Color $ Password
+                                            Generator
+                                            </a>
                                     </li>
                                 </ul>
                             </div>
@@ -210,107 +216,78 @@
                 </div>
             </div>
         </nav>
-        <br><br>
-
-        <div class="parent">
-            <h1>Guess My Number</h1>
-            <h3>Number is between 10 - 25</h3>
-            <input type="number" id="input" placeholder="Guess My Number">
-            <p id="result"></p>
-            <br><br>
-            <button class="cta1" id="cta1"
-                onclick="guessBtn()">Submit
-            </button><br>
-            <button class="cta2" id="cta2" onclick="reset()">
-                Reset
-            </button>
-            <h3>Attempts: <span id="attempts">6</span></h3>
+        <div class="container">
+            <div class="parent">
+                <h1>Color Generator</h1>
+                <button id="generateColorBtn" class="button">Generate
+                    Color</button><br><br>
+                <div class="color" id="color">
+                    <p id="colorHex">Color will show here</p>
+                </div>
+            </div>
+            <div class="parent">
+                <h1>Password Generator</h1>
+                <input type="number" id="input"
+                    placeholder="Enter length of Password"><br>
+                <button id="generatePassBtn" class="button">Generate
+                    Password</button>
+                <h3>Password Generated:</h3>
+                <div class="password">
+                    <h4 id="passwordGenerated"></h4>
+                </div>
+            </div>
         </div>
-        <br><br>
         <pre>
-            <code>
-                let myNum = Math.floor(Math.random() * 16) + 10;
-                console.log(`number: ${myNum}`);
+        <code>
+            // COLOR CODE
+            let myColor = "123456abcdef"
+            let generateBtn = document.getElementById("generateColorBtn")
+            let color = document.getElementById("color")
+            let colorHex = document.getElementById("colorHex")
 
-                const cta1 = document.getElementById("cta1");
-                const cta2 = document.getElementById("cta2");
-                const attemptshtml = document.getElementById("attempts");
-                const input = document.getElementById("input");
-                let attempts = 6;
+            const generateColor = () => {
+                let colorGen = ''
+                let passLength = myColor.length
+                for (let b = 0; b < 6; b++) {
+                    let machineChar = Math.floor(Math.random() * passLength)
+                    colorGen += myColor[machineChar]
+                }
+                color.style.background = `#${colorGen}`
+                colorHex.textContent = `#${colorGen}`
+            }
 
-                const guessBtn = () => {
-                    let result = document.getElementById("result");
-                    const answer = Number(input.value);
+            generateBtn.addEventListener('click', generateColor)
 
-                    if (input.value === "" || isNaN(answer)) {
-                        result.textContent = "Please enter a valid number";
-                        result.style.color = "orange";
-                        input.value = "";
-                        input.focus();
-                        return;
+            // PASSWORD CODE
+            let passWord = "`~1!2@3#4$5%6^7&8*9(0)-_=+qQwWrReEtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:'\|zZxXcCvVbBnNmM,<.>/? "
+            let generatePassBtn = document.getElementById("generatePassBtn")
+            let passwordGenerated = document.getElementById("passwordGenerated")
+            let input = document.getElementById("input")
+
+            const generatePassword = () => {
+                let passwordGen = ''
+                let passLength = passWord.length
+                userInput = input.value
+
+                if (userInput !== '') {
+                    for (let b = 0; b < userInput; b++) {
+                        let machineChar = Math.floor(Math.random() * passLength)
+                        passwordGen += passWord[machineChar]
+                        passwordGenerated.textContent = passwordGen
+                        passwordGenerated.style.color  = '#333'
                     }
-
-                    if (answer < 10 || answer > 25) {
-                        result.textContent = "Number must be between 10 and 25";
-                        result.style.color = "gray";
-                        input.value = "";
-                        input.focus();
-                        return;
-                    }
-
-                    attempts--;
-
-                    if (answer === myNum) {
-                        result.textContent = `You guessed it right! The number was ${myNum}.`;
-                        result.style.color = "green";
-                        attemptshtml.textContent = "";
-                        input.disabled = true;
-                        cta1.style.display = "none";
-                        cta2.style.display = "inline-block";
-                        return;
-                    }
-
-                    if (attempts > 0) {
-                        if (answer < myNum) {
-                            result.textContent = `Too low! ${attempts} attempts left.`;
-                        } else {
-                            result.textContent = `Too high! ${attempts} attempts left.`;
-                        }
-                        result.style.color = "#a1524d";
-                        attemptshtml.textContent = attempts;
-                        input.value = "";
-                        input.focus();
-                    } else {
-                        result.textContent = `Game Over! The number was ${myNum}`;
-                        result.style.color = "red";
-                        attemptshtml.textContent = "";
-                        input.disabled = true;
-                        cta1.style.display = "none";
-                        cta2.style.display = "inline-block";
-                    }
-                };
-
-                const reset = () => {
-                    myNum = Math.floor(Math.random() * 16) + 10;
-                    console.log(`New number: ${myNum}`);
-
-                    input.value = "";
-                    input.disabled = false;
-                    input.focus();
-
-                    let result = document.getElementById("result");
-                    result.textContent = "";
-
-                    attempts = 6;
-                    attemptshtml.textContent = attempts;
-
-                    cta2.style.display = "none";
-                    cta1.style.display = "inline-block";
-                };
-            </code>
-        </pre>
-        <script src="guessgame.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+                }
+                else {
+                    passwordGenerated.textContent =  'Fill in the fields properly'
+                    passwordGenerated.style.color  =  'red'
+                }
+            }
+            generatePassBtn.addEventListener('click', generatePassword)
+        </code>
+    </pre>
+        <script src="color_generator.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     </body>
 
 </html>

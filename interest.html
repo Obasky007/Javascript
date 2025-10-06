@@ -7,23 +7,9 @@
         <title>Interest Calculator of 15%</title>
         <link rel="stylesheet" href="output.css">
         <style>
-        h1 {
-            font-size: 200%;
-            font-weight: bold;
+        * {
+            font-family: cursive;
         }
-
-        .parent {
-            font-family: Arial, Helvetica, sans-serif;
-            width: fit-content;
-            height: 400px;
-            background-color: gainsboro;
-            box-shadow: 0 0 10px rgba(139, 125, 125, 0.1);
-            padding: 20px;
-            text-align: center;
-            border-radius: 20px;
-        }
-
-
         input,
         select {
             width: 40%;
@@ -40,58 +26,82 @@
             box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
         }
 
-        .cta {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #218838;
-        }
-
-        h4 {
-            margin-top: 20px;
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-bottom: 10px;
             color: #333;
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin: 12px;
+        }
+
+        .parent {
+            background: linear-gradient(to right, aquamarine, rgb(177, 255, 246));
+            width: fit-content;
+            padding: 30px;
+            border-radius: 20px;
+            margin: auto;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             text-align: center;
+        }
+
+        input {
+            background: transparent;
+            width: 200px;
+            height: 45px;
+            border-radius: 10px;
+            border: 1px dotted gray;
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        input:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid teal;
+            background: #fff;
+        }
+
+        #result {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+            color: #333;
             width: 300px;
         }
 
-        .holder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .holder:focus-within .sign {
-            border-right-color: none;
-            border-color: #66afe9;
-            box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
-        }
-
-        .sign {
-            background-color: white;
-            padding: 10px;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            border: 1px solid #ccc;
-            border-right: none;
-            position: relative;
-            left: 10px;
-            bottom: 10px;
+        button {
+            padding: 12px;
             font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            width: 220px;
         }
 
-        pre {
-            background-color: black;
-            color: green;
-            font-size: 13px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-style: italic;
+        .cta {
+            border: 1px solid teal;
+            background-color: #e0fdfb;
+            color: teal;
+            margin-bottom: 10px;
         }
-    </style>
+
+        .cta:hover {
+            background-color: teal;
+            color: white;
+        }
+        .sign{
+            font-size: 20px;
+        }
+        </style>
     </head>
 
     <body>
@@ -193,6 +203,12 @@
                                             class="block px-4 py-2 hover:bg-gray-100">ASS
                                             3</a>
                                     </li>
+                                    <li>
+                                        <a href="color_generator.html"
+                                            class="block px-4 py-2 hover:bg-gray-100">Color
+                                            $ Password Generator
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -222,7 +238,8 @@
                 <option value="11">11 MONTH</option>
                 <option value="12">12 MONTH</option>
             </select><br><br>
-            <button id="btn" class="cta" onclick="calculator()">Calculate Interest</button>
+            <button id="btn" class="cta" onclick="calculator()">Calculate
+                Interest</button>
             <h4 id="result" onclick="calculator()"></h4>
         </div>
         <br><br>

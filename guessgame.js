@@ -8,8 +8,8 @@ const input = document.getElementById("input");
 let attempts = 6;
 
 const guessBtn = () => {
-    const answer = Number(input.value);
     let result = document.getElementById("result");
+    const answer = Number(input.value);
 
     if (input.value === "" || isNaN(answer)) {
         result.textContent = "Please enter a valid number";
@@ -27,28 +27,34 @@ const guessBtn = () => {
         return;
     }
 
+    attempts--;
+
     if (answer === myNum) {
         result.textContent = `You guessed it right! The number was ${myNum}.`;
         result.style.color = "green";
         attemptshtml.textContent = "";
-        input.disabled = true; 
+        input.disabled = true;
+        input.style.cursor = 'not-allowed'
         cta1.style.display = "none";
         cta2.style.display = "inline-block";
         return;
     }
 
-    attempts--;
     if (attempts > 0) {
+        if (answer < myNum) {
+            result.textContent = `Too low! ${attempts} attempts left.`;
+        } else {
+            result.textContent = `Too high! ${attempts} attempts left.`;
+        }
+        result.style.color = "#a1524d";
         attemptshtml.textContent = attempts;
-        result.textContent = `Wrong guess! ${attempts} attempts left.`;
-        result.style.color = "red";
         input.value = "";
         input.focus();
     } else {
         result.textContent = `Game Over! The number was ${myNum}`;
         result.style.color = "red";
         attemptshtml.textContent = "";
-        input.disabled = true; 
+        input.disabled = true;
         cta1.style.display = "none";
         cta2.style.display = "inline-block";
     }
