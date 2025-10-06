@@ -6,6 +6,9 @@ const cta2 = document.getElementById("cta2");
 const attemptshtml = document.getElementById("attempts");
 const input = document.getElementById("input");
 let attempts = 6;
+let score = 10
+let highScore = 0
+let highScoreHtml = document.getElementById("highscore")
 
 const guessBtn = () => {
     let result = document.getElementById("result");
@@ -66,6 +69,7 @@ const reset = () => {
 
     input.value = "";
     input.disabled = false;
+    input.style.cursor = 'auto'
     input.focus();
 
     let result = document.getElementById("result");
