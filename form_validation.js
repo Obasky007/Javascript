@@ -1,5 +1,5 @@
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const nameRegex = /^[a-zA-Z0-9]{3,16}$/;
+const nameRegex = /^[a-zA-Z]{5,16}$/;
 // const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[\d]).{7,}$/;
 const minRegex = /^.{7,}$/;
 const letterRegex = /[a-zA-Z]/;
@@ -19,28 +19,43 @@ const num = document.getElementById("num");
 const letter = document.getElementById("letter");
 
 
-formEmail.addEventListener("submit", () => {
+form.addEventListener("submit", (i) => {
+    i.preventDefault();
+
     const email = formEmail.value.trim();
-    if (emailRegex.test(email)) {
-        emailDoc.textContent = "✔ Valid email";
-        emailDoc.style.color = "green";
-    } else {
-        emailDoc.textContent = "Invalid email address";
+    const username = formUsername.value.trim();
+    const password = formPassword.value.trim();
+
+    if (!emailRegex.test(email)) {
+        emailDoc.textContent = "Invalid email address!";
         emailDoc.style.color = "red";
     }
-});
-
-formUsername.addEventListener("submit", () => {
-    const username = formUsername.value.trim();
-    if (nameRegex.test(username)) {
-        userDoc.textContent = "✔ Username looks good";
-        userDoc.style.color = "green";
-    } else {
-        userDoc.textContent = "3-16 chars only (letters or numbers)";
+    else{
+        emailDoc.textContent = "";
+    }
+    
+    if (!nameRegex.test(username)) {
+        userDoc.textContent = "Must have at least 1 Capital, 1 Small and a minimum of 5 characters";
         userDoc.style.color = "red";
     }
+    else{
+        userDoc.textContent = "";
+    }
+    
+    if (email === '') {
+        emailDoc.textContent = "Required!";
+        emailDoc.style.color = "red";
+    }
+    // if (password === '') {
+    //     passDoc.textContent = "Required!";
+    //     passDoc.style.color = "red";
+    // }
+    if (username === '') {
+        userDoc.textContent = "Required!";
+        userDoc.style.color = "red";
+    }
+    form.submit()
 });
-
 formPassword.addEventListener("input", () => {
     const password = formPassword.value;
     if (minRegex.test(password)) {
@@ -60,33 +75,5 @@ formPassword.addEventListener("input", () => {
     }
 });
 
-form.addEventListener("submit", (i) => {
-    i.preventDefault();
 
-    const email = formEmail.value.trim();
-    const username = formUsername.value.trim();
-    const password = formPassword.value.trim();
 
-    if (!emailRegex.test(email)) {
-        emailDoc.textContent = "Invalid email address!";
-        emailDoc.style.color = "red";
-    }
-    
-    if (!nameRegex.test(username)) {
-        userDoc.textContent = "Invalid username!";
-        userDoc.style.color = "red";
-    }
-    
-    if (email === '') {
-        emailDoc.textContent = "Required!";
-        emailDoc.style.color = "red";
-    }
-    if (password === '') {
-        passDoc.textContent = "Required!";
-        passDoc.style.color = "red";
-    }
-    if (username === '') {
-        userDoc.textContent = "Required!";
-        userDoc.style.color = "red";
-    }
-});
