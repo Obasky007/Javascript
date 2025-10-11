@@ -1,6 +1,6 @@
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const nameRegex = /^[a-zA-Z]{5,16}$/;
-// const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[\d]).{7,}$/;
+const nameRegex = /^[a-zA-Z0-9]{5,}$/;
+const passwordRegex = /(?=.*[a-zA-Z])(?=.*[\d]).{7,}/;
 const minRegex = /^.{7,}$/;
 const letterRegex = /[a-zA-Z]/;
 const numRegex = /[\d!@#$%^&*]/;
@@ -18,7 +18,7 @@ const min = document.getElementById("min");
 const num = document.getElementById("num");
 const letter = document.getElementById("letter");
 
-
+let check
 form.addEventListener("submit", (i) => {
     i.preventDefault();
 
@@ -29,33 +29,41 @@ form.addEventListener("submit", (i) => {
     if (!emailRegex.test(email)) {
         emailDoc.textContent = "Invalid email address!";
         emailDoc.style.color = "red";
+        check = false
     }
-    else{
-        emailDoc.textContent = "";
+    else {
+        check =  true
     }
     
     if (!nameRegex.test(username)) {
         userDoc.textContent = "Must have at least 1 Capital, 1 Small and a minimum of 5 characters";
         userDoc.style.color = "red";
+        check = false
     }
-    else{
-        userDoc.textContent = "";
+    else {
+        check =  true
     }
     
     if (email === '') {
         emailDoc.textContent = "Required!";
         emailDoc.style.color = "red";
+        check = false
     }
-    // if (password === '') {
-    //     passDoc.textContent = "Required!";
-    //     passDoc.style.color = "red";
-    // }
+    if (password === '') {
+        passDoc.textContent = "Required!";
+        passDoc.style.color = "red";
+    }
     if (username === '') {
         userDoc.textContent = "Required!";
         userDoc.style.color = "red";
     }
-    form.submit()
+
+    if (check === true) {
+        form.submit()
+    }
 });
+
+
 formPassword.addEventListener("input", () => {
     const password = formPassword.value;
     if (minRegex.test(password)) {
@@ -74,6 +82,3 @@ formPassword.addEventListener("input", () => {
         letter.style.color = "red";
     }
 });
-
-
-
