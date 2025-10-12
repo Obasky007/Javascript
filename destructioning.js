@@ -1,15 +1,10 @@
-// Question:
-// 1. Iterate through the users array, extract the names of all the object using "Destructuring" and store them in a new array
-// 2. Find the persons who have less than two skills, and store them in a new array
-
-
-
 const users = [
     {
         name: 'Brook',
         scores: 75,
-        skills: ['HTMl', 'CSS', 'JS'],
+        skills: ['HTML', 'CSS', 'JS'],
         age: 16
+
     },
     {
         name: 'Alex',
@@ -59,13 +54,20 @@ const users = [
         skills: ['HTML', 'CSS', 'JS', 'FLUTTER'],
         age: 20
     }
-]
+];
 
-allName = []
-skills = []
+let allName = [];
+let skillsLessThan2 = [];
 
-users.map(({name}) => {
-    console.log(name)
+users.forEach(({ name }) => {
     allName.push(name)
 })
-console.log("all names:", allName);
+console.log("All names:", allName);
+
+users.forEach(({ name, skills }) => {
+    if (skills.length < 2) {
+        skillsLessThan2.push(name);
+    }
+});
+
+console.log("Users with less than 2 skills:", skillsLessThan2);
