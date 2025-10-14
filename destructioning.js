@@ -56,18 +56,18 @@ const users = [
     }
 ];
 
-let allName = [];
-let skillsLessThan2 = [];
+let allName = []
+let skillsLessThan2 = []
 
-users.forEach(({ name }) => {
-    allName.push(name)
-})
-console.log("All names:", allName);
 
 users.forEach(({ name, skills }) => {
+    allName.push(name)
+
     if (skills.length < 2) {
-        skillsLessThan2.push(name);
+        skillsLessThan2.push(name)
     }
-});
+})
+
+console.log("All names:", allName)
 
 console.log("Users with less than 2 skills:", skillsLessThan2);
