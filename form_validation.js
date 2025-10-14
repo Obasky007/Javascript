@@ -18,8 +18,8 @@ const min = document.getElementById("min");
 const num = document.getElementById("num");
 const letter = document.getElementById("letter");
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+form.addEventListener("submit", (i) => {
+    i.preventDefault();
 
     const email = formEmail.value.trim();
     const username = formUsername.value.trim();
