@@ -16,6 +16,7 @@ countdownFunc = () => {
       display.textContent = 'Time Up'
       display.style.background = "#e47070"
       clearInterval(countdown)
+      pauseBtn.style.display = 'none'
     }
     else if (number < 10) {
       display.textContent = `0${number}`
@@ -40,6 +41,7 @@ resetBtn.addEventListener('click', () => {
   number--
   display.textContent = number
   startBtn.style.display = 'inline-block'
+  startBtn.textContent = 'Start'
   clearInterval(countdown);
   resetBtn.style.display = 'none'
   pauseBtn.style.display = 'none'
