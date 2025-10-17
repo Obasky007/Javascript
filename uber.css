@@ -47,8 +47,8 @@ body {
 }
 
 #card {
-    width: 300px;
-    height: 440px;
+    width: 500px;
+    height: 450px;
     padding: 20px;
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHiczGs9SLpAd84v6alQl8k-1jwYp0XUlldA&s') no-repeat center/cover;
     position: relative;
@@ -61,8 +61,8 @@ body {
 }
 
 #card-4 {
-    width: 300px;
-    height: 450px;
+    width: 500px;
+    height: 470px;
     padding: 20px;
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHiczGs9SLpAd84v6alQl8k-1jwYp0XUlldA&s') no-repeat center/cover;
     position: relative;
@@ -222,8 +222,9 @@ input {
 .fa-check-circle {
     font-size: 70px;
     color: yellow;
-    margin-left: 93px;
+    margin-left: 200px;
     margin-top: 5px;
+    margin-bottom: 3px;
 }
 
 #receipt {
@@ -242,7 +243,7 @@ table {
 
 tr {
     text-align: left;
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid gray;
 }
 

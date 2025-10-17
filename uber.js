@@ -53,6 +53,7 @@ bookBtn.addEventListener("click", () => {
       container.innerHTML = `
         <div id="card-3">
           <p id='clock'>00:00:00</p>
+          <p>You are moving from ${fromInput.value.trim()} to ${toInput.value.trim()}</p>
           <p>Your ride is in progress...</p>
           <p style="display:none;" id='text'>Your ride has been paused, do you wish to continue</p>
           <div class="btn">
