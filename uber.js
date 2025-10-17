@@ -75,8 +75,11 @@ bookBtn.addEventListener("click", () => {
         let mins = Math.floor((startSecs % 3600) / 60);
         let secs = startSecs % 60;
 
-        getStopWatch.textContent =
-          `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        secs < 10 ? secs = `0${secs}` : secs = secs
+        mins < 10 ? mins = `0${mins}` : mins = mins
+        hours < 10 ? hours = `0${hours}` : hours = hours
+
+        getStopWatch.textContent = `${hours}:${mins}:${secs}`;
       };
 
       const countFunc = () => {
