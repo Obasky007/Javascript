@@ -80,6 +80,44 @@ bookBtn.addEventListener("click", () => {
         hours < 10 ? hours = `0${hours}` : hours = hours
 
         getStopWatch.textContent = `${hours}:${mins}:${secs}`;
+        endBtn.addEventListener("click", () => {
+          clearInterval(startCounting);
+          let getStopTime = getStopWatch.textContent;
+
+          container.innerHTML = `
+            <div id="card-4">
+              <div id="overlay"></div>
+              <div id="content">
+                <p id="title-2">Ride has ended</p>
+                <span class="fa fa-check-circle"></span>
+                <div id="receipt">
+                  <p id="title-2">Receipt</p>
+                  <table>
+                    <tr><td>Base Fare</td><td id='bFare'></td></tr>
+                    <tr><td>Total Time</td><td id="totalTime"></td></tr>
+                    <tr><td>Time Fare</td><td id='time'></td></tr>
+                    <tr><td>Tax (10%)</td><td id='tax'></td></tr>
+                    <tr><td>Total Amount</td><td id='total'></td></tr>
+                  </table>
+                  <button id="payment">Make Payment</button>
+                </div>
+              </div>
+            </div>
+          `;
+          document.getElementById("totalTime").textContent = getStopTime;
+          let bFare = document.getElementById("bFare");
+          let time = document.getElementById("time");
+          let tax = document.getElementById("tax");
+          let total = document.getElementById("total");
+          let pay = document.getElementById("payment")
+          bFare = bFare.textContent = '$50.00';
+          time = time.textContent = `$${Math.floor(mins * 50)}`;
+          tax = tax.textContent = `${5}%`
+          total.textContent = `$${50 + Math.floor(mins * 5) + 5}`;
+          pay.addEventListener("click", () => {
+            alert('Payment Successful! Thank you for riding with us.');
+          });
+        });
       };
 
       const countFunc = () => {
@@ -95,32 +133,6 @@ bookBtn.addEventListener("click", () => {
           countFunc();
           stop.textContent = 'Pause';
         }
-      });
-      endBtn.addEventListener("click", () => {
-        clearInterval(startCounting);
-        let getStopTime = getStopWatch.textContent;
-
-        container.innerHTML = `
-          <div id="card-4">
-            <div id="overlay"></div>
-            <div id="content">
-              <p id="title-2">Ride has ended</p>
-              <span class="fa fa-check-circle"></span>
-              <div id="receipt">
-                <p id="title-2">Receipt</p>
-                <table>
-                  <tr><td>Base Fare</td><td># 2000</td></tr>
-                  <tr><td>Total Time</td><td><span id="totalTime"></span></td></tr>
-                  <tr><td>Initial Total</td><td># 2100</td></tr>
-                  <tr><td>Tax (10%)</td><td># 21</td></tr>
-                  <tr><td>Total Amount</td><td># 2121</td></tr>
-                </table>
-                <button class="payment">Make Payment</button>
-              </div>
-            </div>
-          </div>
-        `;
-        document.getElementById("totalTime").textContent = getStopTime;
       });
       countFunc();
     });

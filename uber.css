@@ -76,7 +76,7 @@ body {
 #overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 100, 0, 0.616);
+    background: #0064009d;
 }
 
 #content {
@@ -247,7 +247,7 @@ tr {
     border-bottom: 1px solid gray;
 }
 
-.payment {
+#payment {
     width: 100%;
     padding: 10px;
     border: none;
@@ -258,7 +258,7 @@ tr {
     cursor: pointer;
 }
 
-.payment:hover {
+#payment:hover {
     background: #2bd72b;
 }
 
