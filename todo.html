@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List App</title>
     <script src="tailwind.js"></script>
 </head>
-<body>
-    <div class="">
-        <div class="inputs">
-            <div class="flex gap-28">
-                <label for="task">Task Name</label>
-                <label for="Start">Start Time</label>
-                <label for="End">End Time</label>
+
+<body class="bg-gray-100 font-sans">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg m-auto mt-10">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">To-Do List</h1>
+        <div class="my-4">
+            <div>
+                <label for="task" class="block text-gray-700 font-medium mb-1">Task Name</label>
+                <input type="text" id="task" placeholder="Enter task"
+                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
             </div>
-            <div class="flex gap-0">
-                <input class="border-2 border-black p-2" type="text" placeholder="Task Name" id="task">
-                <input class="border-2 border-black p-2 border-l-0" type="time" name="" id="Start">
-                <input class="border-2 border-black p-2 border-l-0" type="time" name="" id="End">
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="Start" class="block text-gray-700 font-medium mb-1">Start Time</label>
+                    <input type="time" id="Start"
+                        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="End" class="block text-gray-700 font-medium mb-1">End Time</label>
+                    <input type="time" id="End"
+                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
             </div>
         </div>
+        <button id="addTask" class="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+            Add Task
+        </button>
+        <div class="mt-6 max-h-[180px] overflow-auto border border-gray-200 rounded-md">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-100 sticky top-0">
+                    <tr class="border-b border-gray-300">
+                        <th class="p-2">Task</th>
+                        <th class="p-2">Time</th>
+                    </tr>
+                </thead>
+                <tbody id="list" class="border-red-300 divide-gray-200">
+
+                </tbody>
+            </table>
+        </div>
     </div>
+
     <script src="todo.js"></script>
 </body>
+
 </html>
