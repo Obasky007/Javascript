@@ -7,10 +7,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>To-Do List App</title>
+    <style>
+        #list::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        #list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        #list::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #3b82f6, #2563eb);
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        #list::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #2563eb, #1e40af);
+        }
+
+        #list {
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #f1f1f1;
+        }
+    </style>
+
     <script src="tailwind.js"></script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black font-sans">
 
     <nav class="bg-white border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -155,50 +182,57 @@
             </div>
         </div>
     </nav>
-    <div class="bg-white shadow-xl rounded-xl p-6 w-full max-w-lg mx-auto mt-12">
-        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">To-Do List</h1>
+    <div
+        class="bg-gradient-to-br from-gray-900 via-gray-800 to-black shadow-2xl rounded-2xl p-6 w-full max-w-lg mx-auto mt-12 border border-gray-700">
+        <h1
+            class="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600">
+            To-Do List
+        </h1>
 
         <div class="space-y-4">
             <div>
-                <label for="task" class="block text-gray-700 font-medium mb-1">Task Name</label>
+                <label for="task" class="block text-gray-300 font-medium mb-1">Task Name</label>
                 <input type="text" id="task" placeholder="Enter task"
-                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    class="w-full bg-gray-900 border border-gray-700 text-gray-100 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500" />
             </div>
 
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label for="Start" class="block text-gray-700 font-medium mb-1">Start Time</label>
+                    <label for="Start" class="block text-gray-300 font-medium mb-1">Start Time</label>
                     <input type="time" id="Start"
-                        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        class="w-full bg-gray-900 border border-gray-700 text-gray-100 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                 </div>
                 <div>
-                    <label for="End" class="block text-gray-700 font-medium mb-1">End Time</label>
+                    <label for="End" class="block text-gray-300 font-medium mb-1">End Time</label>
                     <input type="time" id="End"
-                        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        class="w-full bg-gray-900 border border-gray-700 text-gray-100 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                 </div>
             </div>
         </div>
 
         <button id="addTask"
-            class="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition-colors duration-200">
-            Add Task
+            class="mt-6 w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold py-2 rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-md">
+            ➕ Add Task
         </button>
 
-        <div class="mt-6 max-h-[220px] overflow-auto border border-gray-200 rounded-lg shadow-sm">
+        <div
+            class="mt-6 max-h-[200px] overflow-auto border border-gray-700 rounded-lg shadow-inner bg-gray-900/60 backdrop-blur-sm">
             <table class="w-full text-left border-collapse">
-                <thead class="bg-gray-50 sticky top-0">
-                    <tr class="border-b border-gray-300">
-                        <th class="p-3 text-gray-700 font-medium text-center">Task</th>
-                        <th class="p-3 text-gray-700 font-medium text-center">Time</th>
-                        <th class="p-3 text-gray-700 font-medium text-center">Actions</th>
+                <thead class="bg-gray-800 sticky top-0">
+                    <tr class="border-b border-gray-700">
+                        <th class="p-3 text-gray-300 font-semibold text-center">Task</th>
+                        <th class="p-3 text-gray-300 font-semibold text-center">Time</th>
+                        <th class="p-3 text-gray-300 font-semibold text-center">Actions</th>
                     </tr>
                 </thead>
-                <tbody id="list" class="divide-y divide-gray-200 text-center">
-
+                <tbody id="list" class="divide-y divide-gray-800 text-gray-100 text-center">
                 </tbody>
             </table>
         </div>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
     <script src="todo.js"></script>
 </body>
