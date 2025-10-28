@@ -23,7 +23,10 @@ addBtn.addEventListener("click", () => {
   let startConvert = +startTime.replace(":", ".");
   let endConvert = +endTime.replace(":", ".");
   if (endConvert <= startConvert) {
-    alert("End time must be later than start time!");
+    endInput.style.border = '2px solid red'
+    startInput.style.border = '2px solid red'
+    endInput.value = ''
+    startInput.value = ''
     return;
   }
 
@@ -85,7 +88,6 @@ addBtn.addEventListener("click", () => {
     }
   });
 
-  // Edit task
   editBtn.addEventListener("click", () => {
     clearInterval(interval);
     tr.remove();

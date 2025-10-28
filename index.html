@@ -5,69 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>History of JavaScript</title>
-  <link rel="stylesheet" href="output.css">
-  <style>
-    * {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    h1,
-    h2 {
-      font-size: 25px;
-      font-weight: bold;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      padding: 30px;
-    }
-
-    .container {
-      width: 800px;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .section {
-      border: 1px solid #ddd;
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-
-    .section h2 {
-      margin-top: 0;
-    }
-
-    .code-block {
-      background: #f4f4f4;
-      border: 1px solid #ccc;
-      padding: 10px;
-      font-family: monospace;
-      color: #222;
-      border-radius: 8px;
-    }
-  </style>
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100 font-sans min-h-screen">
 
 <nav class="bg-white border-gray-200">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <span class="self-center text-2xl font-semibold whitespace-nowrap ">Javascript
+    <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-700">Javascript
       Assignment
     </span>
     <button data-collapse-toggle="navbar-dropdown" type="button"
@@ -84,7 +33,7 @@
         class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-6 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
         <li>
           <a href="index.html"
-            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">History</a>
+            class="block py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 text-blue-700 md:p-0">History</a>
         </li>
         <li>
           <a href="ass2.html"
@@ -207,96 +156,93 @@
   </div>
 </nav>
 
-  <br><br>
-  <div class="container">
-    <h1>History of JavaScript</h1>
-    <div class="section" style="text-align: center; font-style: italic; color: #555;">
-      <p>JavaScript was first created in 1995 by Brendan Eich at Netscape.
-        It was originally called Mocha, then renamed to LiveScript, before
-        becoming JavaScript.
-        It started as a simple scripting language and has grown into a
-        powerful tool for web development.</p>
-    </div>
+  <main class="max-w-4xl mx-auto py-16 px-6">
+    <div class="bg-gray-800/50 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-gray-700">
+      <h1 class="text-3xl font-bold text-center text-blue-400 mb-6">History of JavaScript</h1>
+      <p class="text-center italic text-gray-400 mb-10">
+        Created in 1995 by <span class="text-blue-300 font-medium">Brendan Eich</span> at Netscape,
+        JavaScript evolved from a small scripting tool into a powerful foundation of the modern web.
+      </p>
 
-    <div class="section">
-      <h2>ES1 (1997)</h2>
-      <p>The first official JavaScript standard by ECMA.</p>
-      <ul>
-        <li>Basic types: Number, String, Boolean, Object</li>
-        <li>Functions and prototypes</li>
-        <li>Control flow: if/else, for, while</li>
-      </ul>
-      <div class="code-block">
-        var x = 5; var y = 10; function add(a, b) { return a + b; } add(x, y);
-        // 15
-      </div>
-    </div>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-blue-300 mb-2">ES1 (1997)</h2>
+        <p class="text-gray-300 mb-3">The first official JavaScript standard by ECMA.</p>
+        <ul class="list-disc list-inside text-gray-400 mb-3">
+          <li>Basic types: Number, String, Boolean, Object</li>
+          <li>Functions and prototypes</li>
+          <li>Control flow: if/else, for, while</li>
+        </ul>
+        <div class="bg-gray-900 text-green-400 font-mono text-sm p-4 rounded-lg border border-gray-700">
+          var x = 5; var y = 10; function add(a, b) { return a + b; } add(x, y); // 15
+        </div>
+      </section>
 
-    <div class="section">
-      <h2>ES2 (1998)</h2>
-      <p>Mainly minor editorial updates to align with ISO/IEC standards.</p>
-    </div>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-blue-300 mb-2">ES2 (1998)</h2>
+        <p class="text-gray-300">Minor updates for ISO/IEC compliance.</p>
+      </section>
 
-    <div class="section">
-      <h2>ES3 (1999)</h2>
-      <p>The version that made JavaScript widely adopted.</p>
-      <ul>
-        <li>Regular Expressions</li>
-        <li>try/catch for error handling</li>
-        <li>do...while loops</li>
-        <li>Improved String methods</li>
-      </ul>
-      <div class="code-block">
-        var pattern = /js/i; console.log("JavaScript".match(pattern)); try {
-        JSON.parse("bad json"); } catch (e) {
-        console.log("Error caught"); }
-      </div>
-    </div>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-blue-300 mb-2">ES3 (1999)</h2>
+        <p class="text-gray-300 mb-3">This version made JavaScript truly mainstream.</p>
+        <ul class="list-disc list-inside text-gray-400 mb-3">
+          <li>Regular Expressions</li>
+          <li>try/catch for error handling</li>
+          <li>do...while loops</li>
+          <li>Improved String methods</li>
+        </ul>
+        <div class="bg-gray-900 text-green-400 font-mono text-sm p-4 rounded-lg border border-gray-700">
+          var pattern = /js/i;<br>console.log("JavaScript".match(pattern));<br>try { JSON.parse("bad json"); } catch (e)
+          { console.log("Error caught"); }
+        </div>
+      </section>
 
-    <div class="section">
-      <h2>ES4 (Abandoned in 2008)</h2>
-      <p>Planned to add classes, modules, and more, but was too ambitious and
-        got dropped.</p>
-    </div>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-blue-300 mb-2">ES4 (Abandoned 2008)</h2>
+        <p class="text-gray-300">Planned to add classes, modules, and more — but dropped for being too ambitious.</p>
+      </section>
 
-    <div class="section">
-      <h2>ES5 (2009)</h2>
-      <p>Brought modern features and strict mode.</p>
-      <ul>
-        <li>Strict mode ("use strict")</li>
-        <li>JSON.parse / JSON.stringify</li>
-        <li>Array methods: map, forEach, filter, reduce</li>
-        <li>Object.defineProperty()</li>
-      </ul>
-      <div class="code-block">
-        'use strict'; var nums = [1, 2, 3]; var doubled =
-        nums.map(function(n){ return n * 2; }); console.log(doubled);
-        // [2, 4, 6]
-      </div>
-    </div>
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold text-blue-300 mb-2">ES5 (2009)</h2>
+        <p class="text-gray-300 mb-3">Introduced modern core features and strict mode.</p>
+        <ul class="list-disc list-inside text-gray-400 mb-3">
+          <li>Strict mode (<code>"use strict"</code>)</li>
+          <li>JSON.parse / JSON.stringify</li>
+          <li>Array methods: map, forEach, filter, reduce</li>
+          <li>Object.defineProperty()</li>
+        </ul>
+        <div class="bg-gray-900 text-green-400 font-mono text-sm p-4 rounded-lg border border-gray-700">
+          'use strict';<br>var nums = [1, 2, 3];<br>var doubled = nums.map(function(n){ return n * 2;
+          });<br>console.log(doubled); // [2, 4, 6]
+        </div>
+      </section>
 
-    <div class="section">
-      <h2>ES6 (2015)</h2>
-      <p>The “big upgrade” that shaped modern JavaScript.</p>
-      <ul>
-        <li>let / const for block scope</li>
-        <li>Arrow functions</li>
-        <li>Template literals</li>
-        <li>Classes and inheritance</li>
-        <li>Modules (import/export)</li>
-        <li>Promises for async</li>
-        <li>Destructuring and Spread operator</li>
-      </ul>
-      <div class="code-block">
-        const greet = (name) => `Hello, ${name}!`; console.log(greet("Oba"));
-        class Person { constructor(name) {
-        this.name = name; } sayHi() { return `Hi, I'm ${this.name}`; } } const
-        me = new Person("Oba");
-        console.log(me.sayHi());
-      </div>
+      <section>
+        <h2 class="text-xl font-semibold text-blue-300 mb-2">ES6 (2015)</h2>
+        <p class="text-gray-300 mb-3">The major update that transformed JavaScript into what we know today.</p>
+        <ul class="list-disc list-inside text-gray-400 mb-3">
+          <li>let / const</li>
+          <li>Arrow functions</li>
+          <li>Template literals</li>
+          <li>Classes and inheritance</li>
+          <li>Modules (import/export)</li>
+          <li>Promises for async</li>
+          <li>Destructuring and Spread operator</li>
+        </ul>
+        <div class="bg-gray-900 text-green-400 font-mono text-sm p-4 rounded-lg border border-gray-700">
+          const greet = (name) =&gt; `Hello, ${name}!`;<br>
+          console.log(greet("Oba"));<br><br>
+          class Person {<br>
+          &nbsp;&nbsp;constructor(name) { this.name = name; }<br>
+          &nbsp;&nbsp;sayHi() { return `Hi, I'm ${this.name}`; }<br>
+          }<br>
+          const me = new Person("Oba");<br>
+          console.log(me.sayHi());
+        </div>
+      </section>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </main>
+
 </body>
 
 </html>
